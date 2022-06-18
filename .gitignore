@@ -19,6 +19,8 @@
 .vs/
 .vscode/
 .vsconfig
+.sln
+.csproj
 
 # Rider cache directory
 .idea/
