@@ -25,7 +25,7 @@
             await ExcelWriterFactory.GetProvider(stream, value, sheetName, excelType, configuration, printHeader).SaveAsAsync(cancellationToken);
         }
 
-        public static async Task<IEnumerable<dynamic>> QueryAsync(string path, bool useHeaderRow = false, string sheetName = null, ExcelType excelType = ExcelType.UNKNOWN, string startCell = "A1", IConfiguration configuration = null,CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<IEnumerable<IDictionary<string, object>>> QueryAsync(string path, bool useHeaderRow = false, string sheetName = null, ExcelType excelType = ExcelType.UNKNOWN, string startCell = "A1", IConfiguration configuration = null,CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Task.Run(() => Query(path, useHeaderRow, sheetName, excelType, startCell, configuration),cancellationToken);
         }
@@ -40,9 +40,9 @@
             return await Task.Run(() => Query<T>(path, sheetName, excelType, startCell, configuration),cancellationToken).ConfigureAwait(false);
         }
 
-        public static async Task<IEnumerable<dynamic>> QueryAsync(this Stream stream, bool useHeaderRow = false, string sheetName = null, ExcelType excelType = ExcelType.UNKNOWN, string startCell = "A1", IConfiguration configuration = null,CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<IEnumerable<IDictionary<string, object>>> QueryAsync(this Stream stream, bool useHeaderRow = false, string sheetName = null, ExcelType excelType = ExcelType.UNKNOWN, string startCell = "A1", IConfiguration configuration = null,CancellationToken cancellationToken = default(CancellationToken))
         {
-            TaskCompletionSource<IEnumerable<dynamic>> tcs = new TaskCompletionSource<IEnumerable<dynamic>>();
+            TaskCompletionSource<IEnumerable<IDictionary<string, object>>> tcs = new TaskCompletionSource<IEnumerable<IDictionary<string, object>>>();
             cancellationToken.Register(() => {
                 tcs.TrySetCanceled();
             });
