@@ -3,7 +3,7 @@
   "version": "1.26.3",
   "displayName": "MiniExcel",
   "description": "Fast, Low-Memory, Easy Excel .NET helper to import/export/template spreadsheet.",
-  "unity": "2021.3",
+  "unity": "2019.4",
   "documentationUrl": "https://github.com/laicasaane/MiniExcel",
   "licensesUrl": "https://github.com/laicasaane/MiniExcel/blob/master/LICENSE",
  "keywords": [
