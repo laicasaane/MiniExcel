@@ -1,6 +1,6 @@
 {
   "name": "com.laicasaane.miniexcel",
-  "version": "1.26.3",
+  "version": "1.26.5",
   "displayName": "MiniExcel",
   "description": "Fast, Low-Memory, Easy Excel .NET helper to import/export/template spreadsheet.",
   "unity": "2019.4",
